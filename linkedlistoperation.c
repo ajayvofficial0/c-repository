@@ -125,11 +125,25 @@ void glength(){
     }
    }
 //-------------------------------------------------------------------
-
+void search(){
+    count=0;
+    struct node *temp;
+temp=head;
+int ele;
+printf("enter the element u want to search");
+scanf("%d",&ele);
+while(temp!=NULL){
+    count++;
+    if(temp->value==ele)
+     printf("the element is found at %d node",count);
+    temp=temp->next;
+    }
+}
+//--------------------------------------------------------------------
 void main(){
     int choice;
     while(1){
-    printf("enter choice:\n1first 2last 3any-add\n4first 5last 6any-remove\n7-display\n8-exit");
+    printf("enter choice:\n1first 2last 3any-add\n4first 5last 6any-remove\n7-display\n8-search\n9-exit");
     scanf("%d",&choice);
     switch(choice){
         case 1:
@@ -168,11 +182,13 @@ void main(){
         break;
 
         case 8:
+        search();
+
+        case 9:
         exit(0);
 
         default:
          printf("invalid input");
     }
     }
-
-}
+    }
